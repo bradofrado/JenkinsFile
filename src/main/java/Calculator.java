@@ -1,6 +1,7 @@
+import java.util.Random;
 
 class Calculator {
-
+    Random rnd = new Random();
     Calculator(){
 
     }
@@ -39,7 +40,19 @@ class Calculator {
     etc
      */
     int fibonacciNumberFinder(int n){
-        return 0;
+        if (n <= 0) {
+            return 0;
+        }
+
+        int prev1 = 1;
+        int prev2 = 1;
+        for (int i = 2; i < n; i++) {
+            int temp = prev1;
+            prev1 += prev2;
+            prev2 = temp;
+        }
+
+        return prev1;
     }
 
 
@@ -51,7 +64,7 @@ class Calculator {
     if int a = 16 then this method returns: 10000
      */
     String intToBinaryNumber(int n){
-        return null;
+        return Integer.toBinaryString(n);
     }
 
     /*
@@ -63,8 +76,11 @@ class Calculator {
     if you run this function twice with the same String input, it must return 2 unique String IDs
      */
     String createUniqueID(String n){
-
-        return null;
+        int count = rnd.nextInt(10) + 5;
+        for (int i = 0; i < count; i++) {
+            n += (char)rnd.nextInt(125 - 48) + 48; //a - z
+        }
+        return n;
     }
 
 
