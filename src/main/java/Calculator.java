@@ -56,7 +56,7 @@ class Calculator {
     }
 
 
-    /*  
+    /*
     Returns binary value of the given int number
     The binary number will be stored as a string
     if int a = 0 then this method returns: 0
