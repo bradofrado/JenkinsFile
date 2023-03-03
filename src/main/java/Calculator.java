@@ -54,7 +54,7 @@ class Calculator {
 
         return prev1;
     }
-
+ 
 
     /*
     Returns binary value of the given int number
