@@ -1,5 +1,33 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
+        System.out.println("Welcome to the jenkins calculator!");
+        System.out.println("Enter your commands:");
+
+        String[] inputs = null;
+        do {
+            inputs = getInputs();
+            if (inputs != null) {
+                doMethod(inputs);
+            }
+        } while (inputs != null);
+    }
+
+    private static String[] getInputs() {
+        Scanner scanner = new Scanner(System.in);
+        String[] args = new String[3];
+        if (scanner.hasNextLine()) {
+            String line = scanner.nextLine();
+            args = line.split(" ");
+        } else {
+            return null;
+        }
+
+        return args;
+    }
+
+    private static void doMethod(String[] args) {
         if (args.length < 1) {
             System.out.println("Usage: [method] [...params]");
             return;
